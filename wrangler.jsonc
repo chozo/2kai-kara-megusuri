@@ -1,0 +1,15 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "2kai-kara-megusuri",
+  "compatibility_date": "2026-09-29",
+  // game.chozo.net の他のゲームと同じく、パス配下だけで公開する
+  "workers_dev": false,
+  "observability": { "enabled": true, "head_sampling_rate": 1 },
+  // Vite のビルド結果を静的アセットとして配信（Worker スクリプトなし）。
+  // URL の /2kai-kara-megusuri/ に合わせ、dist/2kai-kara-megusuri/ に出力している
+  "assets": { "directory": "./dist" },
+  "routes": [
+    { "pattern": "game.chozo.net/2kai-kara-megusuri", "zone_name": "chozo.net" },
+    { "pattern": "game.chozo.net/2kai-kara-megusuri/*", "zone_name": "chozo.net" }
+  ]
+}

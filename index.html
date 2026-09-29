@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+    <meta name="theme-color" content="#5aa9ea" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <title>2階から目薬</title>
+  </head>
+  <body>
+    <div id="game">
+      <div id="drag-area"></div>
+
+      <header id="hud">
+        <div id="level">LEVEL 1 : 2階</div>
+        <div id="wind">
+          <div class="wind-label">WIND</div>
+          <div class="wind-row">
+            <svg id="wind-arrow" viewBox="0 0 48 48" aria-hidden="true">
+              <path d="M6 24h28" stroke="currentColor" stroke-width="6" stroke-linecap="round" fill="none" />
+              <path d="M28 12l14 12-14 12z" fill="currentColor" />
+            </svg>
+            <span id="wind-speed">0.0 m/s</span>
+          </div>
+          <div id="wind-desc"></div>
+          <div id="wind-same">同じ風でもう一度</div>
+        </div>
+      </header>
+
+      <div id="stats"></div>
+      <nav id="levels" aria-label="レベル選択"></nav>
+      <div id="hint">⇆ ドラッグで目薬の位置を調整<br /><small>上下ドラッグで奥行き</small></div>
+
+      <button id="drop-btn" type="button">DROP</button>
+
+      <div id="title-screen">
+        <div class="title-inner">
+          <div class="title-drop" aria-hidden="true"></div>
+          <h1 id="title-main">２階から目薬</h1>
+          <p id="title-sub">風向きを読んで2階目薬をさせ！</p>
+          <button id="start-btn" type="button">スタート</button>
+          <p class="title-howto">ドラッグで位置を調整して DROP</p>
+        </div>
+      </div>
+
+      <div id="allclear">
+        <div class="ac-rays" aria-hidden="true"></div>
+        <div class="ac-inner">
+          <div class="ac-crown" aria-hidden="true">👑</div>
+          <div id="ac-title">ALL CLEAR!!</div>
+          <div id="ac-sub">2階・3階・5階 ぜんぶ入った！</div>
+          <div id="ac-stats"></div>
+        </div>
+        <button id="to-title-btn" type="button">タイトルへ</button>
+      </div>
+
+      <div id="flash"></div>
+      <div id="result">
+        <div id="result-title"></div>
+        <div id="result-sub"></div>
+        <div id="result-detail"></div>
+        <button id="retry-btn" type="button">もう一滴</button>
+      </div>
+
+      <button id="sound-btn" type="button" aria-label="ミュート">🔊</button>
+      <button id="debug-btn" type="button" title="デバッグ表示 (D)">DBG</button>
+      <pre id="debug-panel"></pre>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
