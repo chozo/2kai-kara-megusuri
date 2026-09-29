@@ -641,7 +641,7 @@ body {
 
 #sound-btn {
   position: absolute;
-  top: calc(max(2cqh, env(safe-area-inset-top)) + 4.5cqh);
+  top: max(2cqh, env(safe-area-inset-top));
   right: 3cqw;
   z-index: 6;
   width: 5.2cqh;
@@ -659,23 +659,6 @@ body {
 }
 
 /* ---------- デバッグ ---------- */
-#debug-btn {
-  position: absolute;
-  top: max(2cqh, env(safe-area-inset-top));
-  right: 3cqw;
-  z-index: 6;
-  font: 700 1.5cqh ui-monospace, monospace;
-  padding: 0.6cqh 1.4cqw;
-  border-radius: 0.8cqh;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  background: rgba(0, 0, 0, 0.25);
-  color: rgba(255, 255, 255, 0.7);
-  cursor: pointer;
-}
-#debug-btn.on {
-  background: #ff2266;
-  color: #fff;
-}
 #debug-panel {
   position: absolute;
   left: 2cqw;

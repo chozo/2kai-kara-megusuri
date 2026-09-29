@@ -24,7 +24,6 @@ export class UI {
   readonly retryButton = $<HTMLButtonElement>('retry-btn');
   readonly startButton = $<HTMLButtonElement>('start-btn');
   readonly toTitleButton = $<HTMLButtonElement>('to-title-btn');
-  readonly debugButton = $<HTMLButtonElement>('debug-btn');
   readonly soundButton = $<HTMLButtonElement>('sound-btn');
   readonly dragArea = $<HTMLDivElement>('drag-area');
   onSelectLevel: (index: number) => void = () => {};
@@ -184,7 +183,6 @@ export class UI {
 
   setDebugVisible(v: boolean) {
     this.debugPanel.classList.toggle('show', v);
-    this.debugButton.classList.toggle('on', v);
   }
 
   setDebugText(text: string) {

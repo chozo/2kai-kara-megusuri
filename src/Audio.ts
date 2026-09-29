@@ -27,15 +27,8 @@ export class GameAudio {
   private bgmStep = 0;
   private bgmNext = 0;
   bgmPlaying = false;
+  /** 起動時は常に BGM あり（ミュートは保存しない） */
   muted = false;
-
-  constructor() {
-    try {
-      this.muted = localStorage.getItem('megusuri-muted') === '1';
-    } catch {
-      /* localStorage が使えない環境でも鳴らせるようにする */
-    }
-  }
 
   /** ユーザー操作の中で呼ぶ。初回だけ AudioContext を作る */
   unlock() {
@@ -63,11 +56,6 @@ export class GameAudio {
 
   setMuted(m: boolean) {
     this.muted = m;
-    try {
-      localStorage.setItem('megusuri-muted', m ? '1' : '0');
-    } catch {
-      /* 保存できなくても動作は続ける */
-    }
     if (this.ctx) this.master.gain.setTargetAtTime(m ? 0 : CONFIG.audio.master, this.ctx.currentTime, 0.03);
   }
 

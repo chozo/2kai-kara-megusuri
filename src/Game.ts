@@ -114,7 +114,6 @@ export class Game {
     };
     container.addEventListener('pointerdown', unlockAudio);
     window.addEventListener('keydown', unlockAudio);
-    this.ui.debugButton.addEventListener('click', () => this.setDebug(!this.debug.visible));
     this.ui.buildLevelButtons(PLAYABLE_LEVELS.map((l) => l.name));
     this.ui.onSelectLevel = (i) => this.selectLevel(i);
     this.unlocked = loadProgress();
@@ -141,6 +140,7 @@ export class Game {
   private start() {
     if (this.state !== 'title') return;
     this.audio.unlock();
+    this.audio.startBgm();
     this.audio.tap();
     this.ui.hideTitle();
     this.runTries = 0;
